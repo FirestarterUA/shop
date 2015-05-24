@@ -1,6 +1,6 @@
 October CMS FireShop plugin. 
 ===================
-Бесплатный плагин Магазина Ocotber CMS. Позволяет реализовать интернет магазина на October CMS. 
+FireShop Бесплатный плагин Магазина October CMS. Позволяет реализовать интернет магазина на October CMS. 
 ![enter image description here](http://i.piccy.info/i9/79649db3d4024538b1aaf26af24272cf/1432461286/128105/881059/screencapture_shop_my_backend_firestarter_shop_products_create_1432460963033.png)
 
 Очень жалко выбросить, но без поддержки(людей и/или денег) нет сил доделать все как нужно.
