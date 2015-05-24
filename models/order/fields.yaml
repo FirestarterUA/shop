@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    user_name:
+        label: firestarter.shop::lang.shop.user_name
+        span: left
+        placeholder: firestarter.shop::lang.shop.user_name_placeholder
+    email:
+        label: firestarter.shop::lang.shop.email
+        span: right
+        placeholder: firestarter.shop::lang.shop.email_placeholder
+    product_id:
+        label: firestarter.shop::lang.shop.product
+        span: left
+        type: dropdown
+        placeholder: firestarter.shop::lang.shop.product
+    coupon_id:
+        label: firestarter.shop::lang.shop.coupon
+        span: right
+        type: dropdown
+        placeholder: firestarter.shop::lang.shop.coupon

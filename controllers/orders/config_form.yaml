@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Order
+
+# Model Form Field configuration
+form: $/firestarter/shop/models/order/fields.yaml
+
+# Model Class name
+modelClass: Firestarter\Shop\Models\Order
+
+# Default redirect location
+defaultRedirect: firestarter/shop/orders
+
+# Create page
+create:
+    title: Create Order
+    redirect: firestarter/shop/orders/update/:id
+    redirectClose: firestarter/shop/orders
+
+# Update page
+update:
+    title: Edit Order
+    redirect: firestarter/shop/orders
+    redirectClose: firestarter/shop/orders
+
+# Preview page
+preview:
+    title: Preview Order

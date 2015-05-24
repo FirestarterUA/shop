@@ -1,0 +1,13 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    user_name:
+        label: firestarter.shop::lang.shop.user_name
+        type: text
+        searchable: true
+    email:
+        label: firestarter.shop::lang.shop.email
+        type: text
+        searchable: true

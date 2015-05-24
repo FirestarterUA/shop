@@ -1,0 +1,85 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        wmz_is_active:
+            label: Активна
+            type: checkbox
+            default: false
+            tab: WMZ
+        wmz_carrency:
+            label: Валюта для кошелька
+            type: dropdown
+            tab: WMZ
+        wmz_purse:
+            label: WMZ кошелек
+            tab: WMZ
+        wmz_secret_key:
+            label: WMZ секретный ключ
+            tab: WMZ
+            
+        wmr_is_active:
+            label: Активна
+            type: checkbox
+            default: false
+            tab: WMR
+        wmr_carrency:
+            label: Валюта для кошелька
+            type: dropdown
+            tab: WMR
+        wmr_purse:
+            label: WMR кошелек
+            tab: WMR
+        wmr_secret_key:
+            label: WMR секретный ключ
+            tab: WMR
+
+        wmu_is_active:
+            label: Активна
+            type: checkbox
+            default: false
+            tab: WMU
+        wmu_carrency:
+            label: Валюта для кошелька
+            type: dropdown
+            tab: WMU
+        wmu_purse:
+            label: WMU кошелек
+            tab: WMU
+        wmu_secret_key:
+            label: WMU секретный ключ
+            tab: WMU
+
+        wme_is_active:
+            label: Активна
+            type: checkbox
+            default: false
+            tab: WME
+        wme_carrency:
+            label: Валюта для кошелька
+            type: dropdown
+            tab: WME
+        wme_purse:
+            label: WME кошелек
+            tab: WME
+        wme_secret_key:
+            label: WME секретный ключ
+            tab: WME
+        
+        yad_is_active:
+            label: Активна
+            type: checkbox
+            default: false
+            tab: YaD
+        yad_carrency:
+            label: Валюта для кошелька
+            type: dropdown
+            tab: YaD
+        yad_purse:
+            label: Yandex.Деньги кошелек
+            tab: YaD
+        yad_secret_key:
+            label: Yandex.Деньги "секрет"
+            tab: YaD

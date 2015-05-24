@@ -1,0 +1,112 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    product_info:
+        label: firestarter.shop::lang.shop.product_main
+        type: section
+    name:
+        label: firestarter.shop::lang.shop.name
+        span: left
+        placeholder: firestarter.shop::lang.shop.name_placeholder
+    slug:
+        label: URL
+        preset:
+            field: name
+            type: url
+        span: right
+    model:
+        label: firestarter.shop::lang.shop.model
+        span: left
+        placeholder: firestarter.shop::lang.shop.model_placeholder
+    price:
+        label: firestarter.shop::lang.shop.price
+        span: right
+    articul:
+        label: Артикул
+        span: left
+    product_options:
+        label: firestarter.shop::lang.shop.product_options
+        type: section
+    options:
+        type: repeater
+        prompt: Добавить вариант товара
+        form:
+            fields:
+                option_articul:
+                    label: Артикул
+                    type: text
+                    span: left
+                option_name:
+                    label: Название варианта
+                    type: text
+                    span: right
+                option_price:
+                    label: Цена
+                    type: text
+                    span: left
+                option_old_price:
+                    label: Старая Цена
+                    type: text
+                    span: right
+                option_count:
+                    label: Количество
+                    type: text
+                    span: left    
+    product_taxonomy:
+        label: firestarter.shop::lang.shop.product_taxonomy
+        type: section
+    categories:
+        label: Отображать в категориях
+        type: relation
+        nameFrom: title
+        span: left
+    vendor:
+        label: Производитель
+        type: relation
+        nameFrom: name
+        span: right
+    product_active:
+        label: firestarter.shop::lang.shop.product_active
+        type: section    
+    is_active:
+        label: Товар в продаже
+        type: switch
+        span: left
+    is_digital:
+        label: Товар цифровой
+        type: switch
+        span: right
+    digital_product:
+        label: firestarter.shop::lang.shop.digital_product
+        type: fileupload
+        mode: file
+        span: right
+    is_recommended:
+        label: Товар рекоменедуем
+        type: switch
+        span: left    
+    available_at:
+        label: Будет доступен
+        type: datepicker
+        mode: datetime
+        span: left        
+    product_additional:
+        label: firestarter.shop::lang.shop.product_additional
+        type: section
+    short_description:
+        label: firestarter.shop::lang.shop.short_description
+        type: richeditor
+        span: left    
+    featured_images:
+        label: firestarter.shop::lang.shop.featured_images
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200
+        span: right
+    description:
+        label: firestarter.shop::lang.shop.description
+        type: richeditor
+        span: left 

@@ -1,0 +1,109 @@
+{% set settings = __SELF__.settings %}
+{% set currencies = __SELF__.currencies %}
+{% set product = __SELF__.product %}
+
+<div class="page-header">
+	<h2>{{product.name}}<small> {{product.model}}</small></h2>
+</div>
+<div class="row">
+	<div class="col-lg-6">
+          <p>{{product.description|raw}}</p>
+	</div>
+	<div class="col-lg-6">
+        <div
+			class="fotorama" 
+			data-nav="thumbs"
+			data-allowfullscreen="true"
+		>
+		{% for image in product.featured_images %}
+			<img src="{{image.path}}" alt="{{product.name}}">
+		{% endfor %}
+		</div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Стоимость лицензии:</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">                    
+                   <table class="table table-bordered">
+                      <tbody>
+                                {% for currency in currencies %}
+                                  <tr>                                    
+                                    <td>
+                                       {{currency.name}}
+                                    </td>
+                                    <td>
+                                      <strong>{{product.price*currency.value}} {{currency.sign}}</strong>
+                                    </td>
+                                  </tr>
+                                {% endfor %}  
+                          </tbody>
+                     </table>                              
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="cart" class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Оформить лицензию:</h3>
+            </div>
+            {% if not product.is_manual_sale %}
+            <div class="panel-body"  id="result">               
+                <form class="form-horizontal"
+                        data-request="{{__SELF__}}::onChangeCarrency" 
+                        data-request-update="'{{__SELF__}}::payments':'#result'"
+                >                    
+                      <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Имя:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="user_name" id="inputPassword3">
+                          <p class="help-block">На которое оформляется лицензия</p>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control"  name="user_email" id="inputEmail3">
+                          <p class="help-block">На которую оформляется лицензия и поддержка</p>
+                        </div>
+                      </div>
+                      <div class="form-group has-success">
+                          <label class="col-sm-2 control-label" for="inputSuccess1">Купон:</label>
+                          <div class="col-sm-10">
+                              <input type="text" class="form-control"  name="user_coupon" id="inputSuccess1">
+                              <p class="help-block">На скидку, если есть.</p>
+                          </div>
+                      </div>
+                    
+                        <button class="btn btn-primary pull-right" type="submit">
+                            Перейти к оплате
+                        </button>
+                  </form>            
+              
+            </div>
+            {% else %}
+                <div class="panel-body"  id="result">
+                    Оплатите:<br/>
+                    <p class="text-danger"><strong>Внимание!</strong> Оплата ТОЛЬКО на эти реквизиты дает гарантию на получение продукта и оказания технической поддержки.</p>
+                    {% if settings.wmz_is_active %}
+                        <strong>{{product.price*currencies[settings.wmz_carrency-1].value}} {{currencies[settings.wmz_carrency-1].sign}}</strong> на <strong>{{settings.wmz_purse}}</strong> или<hr><br>
+                    {% endif %}
+                    {% if settings.wmr_is_active %}
+                        <strong>{{product.price*currencies[settings.wmr_carrency-1].value}} {{currencies[settings.wmr_carrency-1].sign}}</strong> на <strong>{{settings.wmr_purse}}</strong> или<hr><br>
+                    {% endif %}
+                    {% if settings.wmu_is_active %}
+                        <strong>{{product.price*currencies[settings.wmu_carrency-1].value}} {{currencies[settings.wmu_carrency-1].sign}}</strong> на <strong>{{settings.wmu_purse}}</strong> или<hr><br>
+                    {% endif %}
+                    {% if settings.yad_is_active %}
+                        <strong>{{product.price*currencies[settings.yad_carrency-1].value}} {{currencies[settings.yad_carrency-1].sign}}</strong> на <strong>{{settings.yad_purse}}</strong> <hr>
+                    {% endif %}
+                     Указав в примечании:<br>
+                     "<strong>Оплата за {{product.name}} {{product.model}}, для пользователя EMAIL(тут ваша почта для обновлений и поддержки)</strong>"<br>
+                     В течении 12 часов, для вас будет подотовлена копия, и сброшена на указаную почту, но ТОЛЬКО после поступления платежа.
+                     <p class="text-danger"><strong>Внимание!</strong> При малейшем подозрении или сомнении, напишите мне на почту.</p>
+                </div>
+            {% endif %}
+          </div>
+	</div>
+</div>

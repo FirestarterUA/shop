@@ -1,0 +1,13 @@
+1.0.1: First version of Shop
+1.0.2: 
+    - Create Firestarter Shop Product table
+    - create_products_table.php
+    - create_orders_table.php
+    - create_coupons_table.php
+    - create_currencies_table.php
+1.0.3:
+    - Create Firestarter Shop Categories table
+    - create_categories_table.php
+1.0.4:
+    - Create Firestarter Shop Vendors table
+    - create_vendors_table.php   

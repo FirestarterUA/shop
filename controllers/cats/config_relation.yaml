@@ -1,0 +1,8 @@
+products:
+    label: Categories Line Product
+    view:
+        list: $/firestarter/shop/models/product/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/firestarter/shop/models/product/fields.yaml
+        recordsPerPage: 10

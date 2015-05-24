@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Vendor
+
+# Model Form Field configuration
+form: $/firestarter/shop/models/vendor/fields.yaml
+
+# Model Class name
+modelClass: Firestarter\Shop\Models\Vendor
+
+# Default redirect location
+defaultRedirect: firestarter/shop/vendors
+
+# Create page
+create:
+    title: Create Vendor
+    redirect: firestarter/shop/vendors/update/:id
+    redirectClose: firestarter/shop/vendors
+
+# Update page
+update:
+    title: Edit Vendor
+    redirect: firestarter/shop/vendors
+    redirectClose: firestarter/shop/vendors
+
+# Preview page
+preview:
+    title: Preview Vendor

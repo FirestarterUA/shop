@@ -1,0 +1,23 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: firestarter.shop::lang.shop.name
+        type: text
+        searchable: true
+    model:
+        label: firestarter.shop::lang.shop.model
+        type: text
+        searchable: true
+    slug:
+        label: URL
+        type: text
+    price:
+        label: firestarter.shop::lang.shop.price
+        type: number
+        searchable: true
+    is_recommended:
+        label: Рекомендован
+        type: switch

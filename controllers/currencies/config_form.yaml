@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Currency
+
+# Model Form Field configuration
+form: $/firestarter/shop/models/currency/fields.yaml
+
+# Model Class name
+modelClass: Firestarter\Shop\Models\Currency
+
+# Default redirect location
+defaultRedirect: firestarter/shop/currencies
+
+# Create page
+create:
+    title: Create Currency
+    redirect: firestarter/shop/currencies/update/:id
+    redirectClose: firestarter/shop/currencies
+
+# Update page
+update:
+    title: Edit Currency
+    redirect: firestarter/shop/currencies
+    redirectClose: firestarter/shop/currencies
+
+# Preview page
+preview:
+    title: Preview Currency

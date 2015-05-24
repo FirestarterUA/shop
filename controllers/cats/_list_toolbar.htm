@@ -1,0 +1,26 @@
+<div data-control="toolbar">
+    <a
+        href="<?= Backend::url('firestarter/shop/cats/create') ?>"
+        class="btn btn-primary oc-icon-plus">
+        <?= e(trans('firestarter.shop::lang.shop.new_cat')) ?>
+    </a>
+    <button
+        class="btn btn-default oc-icon-trash-o"
+        disabled="disabled"
+        onclick="$(this).data('request-data', {
+            checked: $('.control-list').listWidget('getChecked')
+        })"
+        data-request="onDelete"
+        data-request-confirm="<?= e(trans('firestarter.shop::lang.shop.sure')) ?>"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-stripe-load-indicator>
+        <?= e(trans('firestarter.shop::lang.shop.delete')) ?>
+    </button>
+    <a
+        href="<?= Backend::url('firestarter/shop/cats/reorder') ?>"
+        class="btn btn-default oc-icon-bars">
+        <?= e(trans('firestarter.shop::lang.shop.manage')) ?>
+    </a>
+</div>

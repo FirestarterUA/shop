@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: firestarter.shop::lang.shop.category_name
+
+# Model Form Field configuration
+form: ~/plugins/firestarter/shop/models/category/fields.yaml
+
+# Model Class name
+modelClass: Firestarter\Shop\Models\Category
+
+# Default redirect location
+defaultRedirect: firestarter/shop/cats
+
+# Create page
+create:
+    title: firestarter.shop::lang.shop.category_create
+    redirect: firestarter/shop/cats/update/:id
+    redirectClose: firestarter/shop/cats
+
+# Update page
+update:
+    title: firestarter.shop::lang.shop.category_update
+    redirect: firestarter/shop/cats
+    redirectClose: firestarter/shop/cats
+
+# Preview page
+preview:
+    title: firestarter.shop::lang.shop.category_preview

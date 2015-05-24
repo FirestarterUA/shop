@@ -1,0 +1,17 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: firestarter.shop::lang.shop.currency_name
+        type: text
+        searchable: true
+    value:
+        label: firestarter.shop::lang.shop.currency_value
+        type: text
+        searchable: true
+    is_default:
+        label: firestarter.shop::lang.shop.is_default
+        type: switch
+        searchable: true

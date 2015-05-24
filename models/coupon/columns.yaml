@@ -1,0 +1,17 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    value:
+        label: firestarter.shop::lang.shop.value
+        type: text
+        searchable: true
+    discount:
+        label: firestarter.shop::lang.shop.discount
+        type: text
+        searchable: true
+    is_used:
+        label: firestarter.shop::lang.shop.is_used
+        type: switch
+        searchable: true

@@ -1,0 +1,18 @@
+{% set products = __SELF__.products %}
+{% set currencies = __SELF__.currencies %}
+
+ <h4>Магазинчик:</h4>
+<ul class="list-inline">
+    {% for product in products %}
+        <li>
+            <h4><i class="icon-shopping-cart"></i> <a href="product/{{ product.id }}">{{ product.name }} {{product.model}}</a></h4>
+            <span><strong>Цена:</strong></span>
+			<ul class="list-unstyled">
+				{% for currency in currencies %}
+					<li>{{currency.value * product.price }} {{currency.name}}</li> 
+				{% endfor %}
+			</ul>
+        </li>
+	{% endfor %}
+</ul>
+<hr/>

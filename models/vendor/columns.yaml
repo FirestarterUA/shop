@@ -1,0 +1,11 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Vendor Name
+        type: text
+    slug:
+        label: Vendor Slug
+        type: text

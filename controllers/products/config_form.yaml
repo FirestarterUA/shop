@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Product
+
+# Model Form Field configuration
+form: $/firestarter/shop/models/product/fields.yaml
+
+# Model Class name
+modelClass: Firestarter\Shop\Models\Product
+
+# Default redirect location
+defaultRedirect: firestarter/shop/products
+
+# Create page
+create:
+    title: Create Product
+    redirect: firestarter/shop/products/update/:id
+    redirectClose: firestarter/shop/products
+
+# Update page
+update:
+    title: Edit Product
+    redirect: firestarter/shop/products
+    redirectClose: firestarter/shop/products
+
+# Preview page
+preview:
+    title: Preview Product

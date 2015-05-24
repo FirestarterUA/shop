@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    value:
+        label: firestarter.shop::lang.shop.value
+        span: left
+        placeholder: firestarter.shop::lang.shop.value_placeholder
+    product_id:
+        label: firestarter.shop::lang.shop.product
+        span: right
+        type: dropdown
+        placeholder: firestarter.shop::lang.shop.product
+    discount:
+        label: firestarter.shop::lang.shop.discount
+        span: left
+        type: number
+        placeholder: firestarter.shop::lang.shop.discount_placeholder
+    is_used:
+        label: firestarter.shop::lang.shop.is_used
+        span: right
+        type: checkbox
+        default: false
+    

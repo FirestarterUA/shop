@@ -1,0 +1,112 @@
+{% if errors is not empty %}
+    {% for error in errors %}
+        <p class="text-danger">
+            {{error}}
+        </p><br/>
+    {% endfor %}
+    <a class="btn btn-danger pull-right" onclick="location.reload();" >Назад</a>
+{% else %}
+
+<p>Выберите нужную валюту, чтобы произвести оплату:</p>
+<div class="row">
+    {% if settings.wmz_is_active %}
+    <div class="col-md-3"> 
+                   <form method="POST" action="https://merchant.webmoney.ru/lmi/payment.asp">                      
+                      
+                      <input type="hidden" name="SHOP_USER_PRODUCT_ID" value="{{product.id}}">                     
+                      <input type="hidden" name="SHOP_USER_NAME" value="{{user.user_name}}">
+                      <input type="hidden" name="SHOP_USER_EMAIL" value="{{user.user_email}}">
+                      
+                      <input type="hidden" name="LMI_PAYMENT_DESC" value="">
+                      <input type="hidden" name="LMI_SIM_MODE" value="0">
+                      <input type="hidden" name="LMI_PAYMENT_NO" value="0">
+                      <input type="hidden" name="LMI_PAYEE_PURSE" value="{{settings.wmz_purse}}">
+                      {% if coupon.discount %}
+                      <input type="hidden" name="LMI_PAYMENT_AMOUNT" value="{{(product.price - product.price*coupon.discount/100)*currencies[settings.wmz_carrency].value}}"> 
+                      <input type="hidden" name="SHOP_USER_COUPON" value="{{coupon.value}}">
+                      {% else %}
+                      <input type="hidden" name="LMI_PAYMENT_AMOUNT" value="{{product.price*currencies[settings.wmz_carrency].value}}"> 
+                      {% endif %}
+                                     
+
+                      <input type="image" src="{{ 'assets/images/payments/wm_wmz.png'|theme }}" alt="Оплатить WMZ">
+                    </form>
+    </div>
+    {% endif %}
+    {% if settings.wmr_is_active %}
+  <div class="col-md-3">
+        <!-- wmr -->
+                    <form method="POST" action="https://merchant.webmoney.ru/lmi/payment.asp">
+                      <input type="hidden" name="SHOP_USER_PRODUCT_ID" value="{{product.id}}">                     
+                      <input type="hidden" name="SHOP_USER_NAME" value="{{user.user_name}}">
+                      <input type="hidden" name="SHOP_USER_EMAIL" value="{{user.user_email}}">
+                      
+                      <input type="hidden" name="LMI_PAYMENT_DESC" value="">
+                      <input type="hidden" name="LMI_SIM_MODE" value="0">
+                      <input type="hidden" name="LMI_PAYMENT_NO" value="0">
+                      <input type="hidden" name="LMI_PAYEE_PURSE" value="{{settings.wmr_purse}}">
+                      {% if coupon.discount %}
+                      <input type="hidden" name="LMI_PAYMENT_AMOUNT" value="{{(product.price - product.price*coupon.discount/100)*currencies[settings.wmr_carrency].value}}"> 
+                      <input type="hidden" name="SHOP_USER_COUPON_ID" value="{{coupon.value}}">
+                      {% else %}
+                      <input type="hidden" name="LMI_PAYMENT_AMOUNT" value="{{product.price*currencies[settings.wmr_carrency].value}}"> 
+                      {% endif %}
+                      
+                      <input type="image" src="{{ 'assets/images/payments/wm_wmr.png'|theme }}" alt="Оплатить WMR">
+                    </form>
+  </div>
+  {% endif %}
+  {% if settings.wmu_is_active %}
+  <div class="col-md-3">
+        <!-- wmu -->
+                    <form method="POST" action="https://merchant.webmoney.ru/lmi/payment.asp">
+                      <input type="hidden" name="SHOP_USER_PRODUCT_ID" value="{{product.id}}">                     
+                      <input type="hidden" name="SHOP_USER_NAME" value="{{user.user_name}}">
+                      <input type="hidden" name="SHOP_USER_EMAIL" value="{{user.user_email}}">
+                      
+                      <input type="hidden" name="LMI_PAYMENT_DESC" value="">
+                      <input type="hidden" name="LMI_SIM_MODE" value="0">
+                      <input type="hidden" name="LMI_PAYMENT_NO" value="0">
+                      <input type="hidden" name="LMI_PAYEE_PURSE" value="{{settings.wmu_purse}}">
+                      {% if coupon.discount %}
+                      <input type="hidden" name="LMI_PAYMENT_AMOUNT" value="{{(product.price - product.price*coupon.discount/100)*currencies[settings.wmu_carrency].value}}"> 
+                      <input type="hidden" name="SHOP_USER_COUPON_ID" value="{{coupon.value}}">
+                      {% else %}
+                      <input type="hidden" name="LMI_PAYMENT_AMOUNT" value="{{product.price*currencies[settings.wmu_carrency].value}}"> 
+                      {% endif %}
+                    </form>
+  </div>
+  {% endif %}
+  {% if settings.yad_is_active %}
+  <div class="col-md-3">
+        <!-- yandex.money -->
+                    <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+                      <input type="hidden" name="label" value="">
+                      <input type="hidden" name="quickpay-form" value="shop">
+                      <input type="hidden" name="referer" value="">
+                      <input type="hidden" name="is-inner-form" value="true">
+                      <input type="hidden" name="receiver" value="41001911531267">
+                      <input class="sum_rur" type="hidden" name="sum" value="">
+                      <input class="comment" type="hidden" name="targets" value="">
+                      <input type="image" src="{{ 'assets/images/payments/yandex.png'|theme }}" alt="Оплатить Yandex.Деньгами">
+                    </form>
+   
+   </div>
+   {% endif %}
+   {% if settings.qiwi_is_active %}
+  <div class="col-md-3">
+    
+         <!-- qiwi -->
+                    <form method="GET" action="https://w.qiwi.com/order/external/create.action">
+                      <!--input type="hidden" name="txn_id" value="777"--><!-- используйте это поле для передачи уникального идентификатора заказа/платежа в вашей системе -->
+                      <input type="hidden" name="to" id="idto">
+                      <input type="hidden" name="currency" value="RUB">
+                      <input type="hidden" name="from" value="252145">
+                      <input class="sum_rur" type="hidden" name="summ" value="">
+                      <input class="comment" type="hidden" name="com" value="">
+                      <!--input type="submit" value="QIWI"-->
+                    </form>
+  </div>
+  {% endif %}
+</div>
+{% endif %}

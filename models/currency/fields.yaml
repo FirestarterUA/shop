@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: firestarter.shop::lang.shop.currency_name
+        span: left
+        placeholder: firestarter.shop::lang.shop.currency_name_placeholder
+    value:
+        label: firestarter.shop::lang.shop.currency_value
+        span: right
+        placeholder: firestarter.shop::lang.shop.currency_value_placeholder
+    sign:
+        label: firestarter.shop::lang.shop.currency_sign
+        span: left
+        placeholder: firestarter.shop::lang.shop.currency_sign_placeholder
+    is_default:
+        label: firestarter.shop::lang.shop.is_default
+        span: right
+        type: checkbox
+        default: false

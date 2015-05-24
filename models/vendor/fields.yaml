@@ -1,0 +1,24 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: vendor name
+        type: text
+        span: left
+    slug:
+        label: URL
+        preset:
+            field: name
+            type: url
+        span: right
+    description:
+        type: richeditor
+        size: huge
+    logo:
+        label: Logotype
+        type: fileupload
+        mode: image
+        imageHeight: 240
+        imageWidth: 320

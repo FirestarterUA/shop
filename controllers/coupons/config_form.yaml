@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Coupon
+
+# Model Form Field configuration
+form: $/firestarter/shop/models/coupon/fields.yaml
+
+# Model Class name
+modelClass: Firestarter\Shop\Models\Coupon
+
+# Default redirect location
+defaultRedirect: firestarter/shop/coupons
+
+# Create page
+create:
+    title: Create Coupon
+    redirect: firestarter/shop/coupons/update/:id
+    redirectClose: firestarter/shop/coupons
+
+# Update page
+update:
+    title: Edit Coupon
+    redirect: firestarter/shop/coupons
+    redirectClose: firestarter/shop/coupons
+
+# Preview page
+preview:
+    title: Preview Coupon
