@@ -44,9 +44,9 @@ class CreateCategoriesTable extends Migration
     public function down()
     {
         if (Schema::hasTable('firestarter_shop_categories'))
-		{
-			Schema::drop('firestarter_shop_categories');
-		}
+        {
+            Schema::drop('firestarter_shop_categories');
+        }
 
 		if (Schema::hasTable('firestarter_shop_products_categories'))
 		{
