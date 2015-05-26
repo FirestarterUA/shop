@@ -33,7 +33,10 @@ class CreateCategoriesTable extends Migration
                 $table->engine = 'InnoDB';
                 $table->integer('product_id')->unsigned();
                 $table->integer('category_id')->unsigned();
-                $table->primary(['product_id', 'category_id']);
+                $table->primary(
+                    ['product_id', 'category_id'],
+                    'firestarter_shop_products_categories_primary'
+                );
             });
         }        
     }
