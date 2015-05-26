@@ -13,7 +13,7 @@ class Category extends Model
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\NestedTree;
 
-    public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
+    public $implement = ['RainLab.Translate.Behaviors.TranslatableModel'];
 
     /**
      * @var boolean Channel has new posts for member, set by ChannelWatch model
